@@ -44,6 +44,8 @@ pipeline {
                     sh 'ls'
                     sh 'cd ./app'
                     sh 'npm --version'
+                    sh 'npm install'
+                    sh 'docker ps'
                 }
             }
         }
