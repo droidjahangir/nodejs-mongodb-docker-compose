@@ -46,6 +46,7 @@ pipeline {
                     sh 'ls'
                     sh 'npm --version'
                     sh 'npm install --prefix app'
+                    sh 'sudo usermod -aG docker jenkins'
                     sh 'docker ps'
                 }
             }
