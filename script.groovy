@@ -1,6 +1,5 @@
 def buildApp() {
     echo 'building the application...'
-    echo "Building version ${NEW_VERSION}"
     sh 'npm install'
 }
 

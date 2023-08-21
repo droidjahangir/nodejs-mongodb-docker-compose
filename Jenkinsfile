@@ -11,7 +11,7 @@ pipeline {
     // }
     agent any
     environment {
-        NEW_VERSION = '1.3.0'
+        // NEW_VERSION = '1.3.0'
         // SERVER_CREDENTIALS = credentials('server-credentials')
     }
     // tools {
@@ -32,11 +32,11 @@ pipeline {
         }
 
         stage("build") {
-            when {
-                expression {
-                    BRANCH_NAME == 'dev'
-                }
-            }
+            // when {
+            //     expression {
+            //         BRANCH_NAME == 'dev'
+            //     }
+            // }
             steps {
                 script {
                     gv.buildApp()
@@ -45,11 +45,11 @@ pipeline {
         }
         
         stage("test") {
-            when {
-                expression {
-                    BRANCH_NAME == 'dev' || BRANCH_NAME == 'master'
-                }
-            }
+            // when {
+            //     expression {
+            //         BRANCH_NAME == 'dev' || BRANCH_NAME == 'master'
+            //     }
+            // }
             steps {
                 script {
                     gv.testApp()
