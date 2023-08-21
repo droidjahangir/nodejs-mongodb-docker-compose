@@ -11,9 +11,9 @@ def testApp() {
 
 def deployApp() {
     echo 'deploying the application...'
-    withCredentials([
-        usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
-    ]) {
-        sh "some script ${USER} ${PWD}"
-    }
+    // withCredentials([
+    //     usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+    // ]) {
+    //     sh "some script ${USER} ${PWD}"
+    // }
 }
