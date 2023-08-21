@@ -41,6 +41,8 @@ pipeline {
                 script {
                     // gv.buildApp()
                     echo 'building the application...'
+                    sh 'ls'
+                    sh 'cd ./app'
                     sh 'npm --version'
                 }
             }
