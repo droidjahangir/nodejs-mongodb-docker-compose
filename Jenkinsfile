@@ -18,7 +18,7 @@ pipeline {
     }
     parameters {
         string(name: 'VERSION', defaultValue: '', description: 'version to deploy on pod')
-        choice(name: 'VERSION', choices: ['1.1.0', 1.2.0], description: 'test description')
+        choice(name: 'VERSION', choices: ['1.1.0', '1.2.0'], description: 'test description')
         booleanParam(name: 'executeTests', defaultValue: true, description: 'boolelan description')
     }
     stages {
