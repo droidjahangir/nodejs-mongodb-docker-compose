@@ -24,7 +24,9 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                gv = load "script.groovy"
+                script {
+                    gv = load 'script.groovy'
+                }
             }
         }
 
@@ -55,12 +57,17 @@ pipeline {
         }
 
         stage("deploy") {
-            input {
-                message: "Select the environment to deploy to : "
-                ok: "Done"
-                parameters {
-                    choice(name: 'ENV', choices: ['dev', 'staging', 'prod'], description: '')
-                }
+            script {
+                // input {
+                //     message: "Select the environment to deploy to : "
+                //     ok: "Done"
+                //     parameters {
+                //         choice(name: 'ENV', choices: ['dev', 'staging', 'prod'], description: '')
+                //     }
+                // }
+                input(message: 'Select the environment to deploy to:', ok: 'Done', parameters: [
+                        choice(name: 'ENV', choices: ['dev', 'staging', 'prod'], description: '')
+                ])
             }
             steps {
                 script {
