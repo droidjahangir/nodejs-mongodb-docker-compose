@@ -1,6 +1,6 @@
 def gv
 
-CODE_CHANGES = getGitChange
+// CODE_CHANGES = getGitChange
 // localhost:8080/env-vars.html
 pipeline {
     // agent {
@@ -34,7 +34,7 @@ pipeline {
         stage("build") {
             when {
                 expression {
-                    BRANCH_NAME == 'dev' && CODE_CHANGES == true
+                    BRANCH_NAME == 'dev'
                 }
             }
             steps {
