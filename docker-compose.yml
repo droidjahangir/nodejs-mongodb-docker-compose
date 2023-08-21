@@ -38,6 +38,15 @@ services:
     networks:
       - node-webapp-network
 
+  jenkins:
+    image: jenkins/jenkins:lts-alpine
+    ports:
+      - '8080:8080'
+    volumes:
+      - jenkins_home:/var/jenkins_home
+  ssh-agent:
+    image: jenkins/ssh-agent
+
 volumes:
   mongodb-data:
 
