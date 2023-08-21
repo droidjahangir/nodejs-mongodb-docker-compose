@@ -39,7 +39,9 @@ pipeline {
             // }
             steps {
                 script {
-                    gv.buildApp()
+                    // gv.buildApp()
+                    echo 'building the application...'
+                    sh 'npm install'
                 }
             }
         }
@@ -52,7 +54,8 @@ pipeline {
             // }
             steps {
                 script {
-                    gv.testApp()
+                    // gv.testApp()
+                    echo 'testing the application...'
                 }
             }
         }
@@ -74,8 +77,9 @@ pipeline {
             // }
             steps {
                 script {
-                    gv.deployApp()
+                    // gv.deployApp()
                     // echo "Deploying to ${ENV}"
+                    echo 'deploying the application...'
                 }
             }
         }
