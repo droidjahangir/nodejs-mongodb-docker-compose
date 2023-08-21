@@ -42,7 +42,8 @@ pipeline {
                     // gv.buildApp()
                     echo 'building the application...'
                     sh 'ls'
-                    sh 'cd ./app'
+                    sh 'cd /var/jenkins_home/workspace/nodejs-pipeline/app'
+                    sh 'ls'
                     sh 'npm --version'
                     sh 'npm install'
                     sh 'docker ps'
