@@ -45,7 +45,7 @@ pipeline {
                     sh 'cd /var/jenkins_home/workspace/nodejs-pipeline/app'
                     sh 'ls'
                     sh 'npm --version'
-                    sh 'npm install'
+                    sh 'npm install --prefix app'
                     sh 'docker ps'
                 }
             }
